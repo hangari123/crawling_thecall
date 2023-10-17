@@ -1,3 +1,4 @@
+import datetime
 import time
 
 import pandas as pd
@@ -7,7 +8,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 # 서버에서 크론탭 돌리면 절대경로로 해줘야 제대로 작동함
-file_path = '/crawling_thecall/data.xlsx'
+file_path = 'crawling_thecall/data.xlsx'
 
 
 # 기존 데이터를 불러올 때, 데이터 타입을 문자열(str)로 변환합니다.
@@ -97,4 +98,6 @@ with pd.ExcelWriter(file_path, engine='openpyxl') as writer:
     print("데이터가 추가됏습니다.1")
 
 
-print(f'데이터가 {file_path} 파일에 추가되었습니다.2')
+# 현재 시간 출력
+current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+print(f'{current_time}: 데이터가 {file_path} 파일에 추가되었습니다.')
