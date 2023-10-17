@@ -9,7 +9,8 @@ from selenium.webdriver.chrome.service import Service
 from pyvirtualdisplay import Display
 
 # 서버에서 크론탭 돌리면 절대경로로 해줘야 제대로 작동함
-file_path = 'data.xlsx'
+file_path = '/home/user/crawling_thecall/data.xlsx'
+
 
 
 # 기존 데이터를 불러올 때, 데이터 타입을 문자열(str)로 변환합니다.
