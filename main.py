@@ -7,7 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 
-file_path = '/home/user/crawling_thecall/data2.xlsx'
+file_path = '/home/user/crawling_thecall/data.xlsx'
 
 
 # 기존 데이터를 불러올 때, 데이터 타입을 문자열(str)로 변환합니다.
