@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.service import Service
 from pyvirtualdisplay import Display
 
 # 서버에서 크론탭 돌리면 절대경로로 해줘야 제대로 작동함
-file_path = 'crawling_thecall/data.xlsx'
+file_path = 'data.xlsx'
 
 
 # 기존 데이터를 불러올 때, 데이터 타입을 문자열(str)로 변환합니다.
@@ -45,6 +45,7 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36')
 chrome_options.add_argument('referer=https://www.google.com/')  # Referer 설정
 
+# 우분투에서 셀레니움 쓸라면 이거 설정해야함
 display = Display(visible=0, size=(1920, 1080))
 display.start()
 
