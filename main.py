@@ -4,6 +4,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 
 
 file_path = 'data.xlsx'
@@ -42,9 +43,10 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36')
 chrome_options.add_argument('referer=https://www.google.com/')  # Referer 설정
 
+service = Service()
 
 # 웹 드라이버 생성 및 옵션 설정
-driver = webdriver.Chrome(options=chrome_options)
+driver = webdriver.Chrome(options=chrome_options, service=service)
 
 # driver = webdriver.Chrome()
 
