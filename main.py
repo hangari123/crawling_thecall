@@ -7,7 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 
-file_path = 'data.xlsx'
+file_path = '/home/user/crawling_thecall/data.xlsx'
 
 
 # 기존 데이터를 불러올 때, 데이터 타입을 문자열(str)로 변환합니다.
@@ -94,6 +94,7 @@ combined_df = pd.concat([existing_data_df, new_data_df], ignore_index=True)
 file_path = 'data.xlsx'  # 원하는 파일 경로 및 이름 설정
 with pd.ExcelWriter(file_path, engine='openpyxl') as writer:
     combined_df.to_excel(writer, index=False, sheet_name='Sheet1')
+    print("데이터가 추가됏습니다.1")
 
 
-print(f'데이터가 {file_path} 파일에 추가되었습니다.')
+print(f'데이터가 {file_path} 파일에 추가되었습니다.2')
