@@ -6,8 +6,8 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
-
-file_path = '/home/user/crawling_thecall/data.xlsx'
+# 서버에서 크론탭 돌리면 절대경로로 해줘야 제대로 작동함
+file_path = '/crawling_thecall/data.xlsx'
 
 
 # 기존 데이터를 불러올 때, 데이터 타입을 문자열(str)로 변환합니다.
