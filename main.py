@@ -6,6 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from pyvirtualdisplay import Display
 
 # 서버에서 크론탭 돌리면 절대경로로 해줘야 제대로 작동함
 file_path = 'crawling_thecall/data.xlsx'
@@ -43,6 +44,9 @@ chrome_options = webdriver.ChromeOptions()
 # 헤더 설정
 chrome_options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36')
 chrome_options.add_argument('referer=https://www.google.com/')  # Referer 설정
+
+display = Display(visible=0, size=(1920, 1080))
+display.start()
 
 chrome_driver_path = '/usr/local/bin/chromedriver'  # 적절한 경로로 변경
 service = webdriver.chrome.service.Service(chrome_driver_path)
