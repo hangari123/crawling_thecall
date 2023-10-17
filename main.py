@@ -44,9 +44,10 @@ chrome_options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64
 chrome_options.add_argument('referer=https://www.google.com/')  # Referer 설정
 
 service = Service()
+chrome_driver_path = '/usr/local/bin/chromedriver'  # 적절한 경로로 변경
 
 # 웹 드라이버 생성 및 옵션 설정
-driver = webdriver.Chrome(options=chrome_options, service=service)
+driver = webdriver.Chrome(executable_path=chrome_driver_path, options=chrome_options, service=service)
 
 # driver = webdriver.Chrome()
 
