@@ -9,7 +9,9 @@ from selenium.webdriver.chrome.service import Service
 from pyvirtualdisplay import Display
 
 # 서버에서 크론탭 돌리면 절대경로로 해줘야 제대로 작동함
-file_path = '/home/user/crawling_thecall/data.xlsx'
+# file_path = '/home/user/crawling_thecall/data.xlsx'
+file_path = 'data.xlsx'
+
 
 
 
@@ -107,3 +109,9 @@ with pd.ExcelWriter(file_path, engine='openpyxl') as writer:
 # 현재 시간 출력
 current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 print(f'{current_time}: 데이터가 {file_path} 파일에 추가되었습니다.')
+
+# 드라이버 종료
+driver.quit()
+
+# 가상 디스플레이 종료
+display.stop()
